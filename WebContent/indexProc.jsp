@@ -7,16 +7,17 @@
 <title>Insert title here</title>
 <%
 	String contentPage = request.getParameter("CONTENTPAGE");
-	String dirPath = application.getRealPath("/include/html/header.jsp");
-	
 %>
+<link rel="stylesheet" type="text/css" href="include/css/index.css">
+<link rel="stylesheet" type="text/css" href="include/css/header.css">
+<link rel="stylesheet" type="text/css" href="include/css/menu.css">
+<link rel="stylesheet" type="text/css" href="include/css/footer.css">
+
 </head>
 <body>
-
-
+	<%= contentPage %>
 	<jsp:include page="/include/html/header.jsp" flush="false" />
 	<jsp:include page="<%=contentPage%>" flush="false" />
 	<jsp:include page="/include/html/footer.jsp" flush="false" />
-	
 </body>
 </html>

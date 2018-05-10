@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:forward page="indexProc.jsp">
-		<jsp:param name="CONTENTPAGE" value="indexContent.jsp" />
+	<jsp:forward page="indexProc.jsp">
+		<jsp:param name="CONTENTPAGE" value="main.jsp?MENU_NAME=menu_00" />
 	</jsp:forward>	
 </body>
 </html>

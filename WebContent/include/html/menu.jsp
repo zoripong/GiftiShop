@@ -7,11 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<ul>
-		<li>1.</li>
-		<li>2.</li>
-		<li>3.</li>
-		<li>4.</li>
-	</ul>
+	<section id="sc_menu">
+		<ul>
+			<% for(int i = 0; i<5; i++){%>
+			<li><a href="main.jsp?MENU_NAME=menu_0<%=i%>"><img src="include/images/menu_0<%=i%>.png"/></a></li>
+			<%
+			}%>
+		
+		</ul>
+	
+	</section>
+
 </body>
 </html>

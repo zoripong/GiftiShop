@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>로고</p>
+	<img id="ic_header_logo"src="include/images/logo.png"/>
+	<img id="ic_shopping_basket" src="include/images/ic_gift_black.svg"/>
+	<img id="ic_user_profiles" src="include/images/ic_user_profiles.svg"/>
 </body>
 </html>
