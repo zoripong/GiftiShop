@@ -11,9 +11,11 @@
 <%
 
 	request.setCharacterEncoding("utf-8");
-	String id = request.getParameter("ip_id");
-	String pw = request.getParameter("ip_pw");
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
 
+	
+	
 %>
 
 <%= id %>
