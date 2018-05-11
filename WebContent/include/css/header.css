@@ -4,7 +4,7 @@
 }
 
 #ic_header_logo {
-    height: 50px;
+    height: 60px;
     float: left;
     margin-left: 3%;
 }
@@ -12,13 +12,13 @@
 #ic_shopping_basket {
     width: 40px;
     height: 40px;
-    margin: 5px;
+    margin: 10px;
 }
 
 #ic_user_profile {
     width: 40px;
     height: 40px;
-    margin: 5px;
+    margin: 10px;
 }
 
 #hd_right_items {

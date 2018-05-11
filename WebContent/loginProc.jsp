@@ -7,8 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="indexTemplate.jsp">
-		<jsp:param name="CONTENTPAGE" value="main.jsp?MENU_NAME=menu_00" />
-	</jsp:forward>	
+
+<%
+
+	request.setCharacterEncoding("utf-8");
+	String id = request.getParameter("ip_id");
+	String pw = request.getParameter("ip_pw");
+
+%>
+
+<%= id %>
+<%= pw %>
 </body>
 </html>
