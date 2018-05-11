@@ -1,0 +1,33 @@
+#sc_menu {
+    display: inline-block;
+    width: 100%;
+    padding-right: 15%;
+    padding-left: 15%;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#sc_menu>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: justify;
+}
+
+#sc_menu>ul>li {
+    display: inline-block;
+    width: 14%;
+}
+
+.menu_img {
+    height: 25px;
+}
+
+hr {
+    margin-left: 10%;
+    margin-right: 10%;
+    border-width: 0;
+    border: solid 1px black;
+}

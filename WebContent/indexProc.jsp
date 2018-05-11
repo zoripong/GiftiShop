@@ -12,10 +12,10 @@
 <link rel="stylesheet" type="text/css" href="include/css/header.css">
 <link rel="stylesheet" type="text/css" href="include/css/menu.css">
 <link rel="stylesheet" type="text/css" href="include/css/footer.css">
+<link rel="stylesheet" type="text/css" href="include/css/main.css">
 
 </head>
 <body>
-	<%= contentPage %>
 	<jsp:include page="/include/html/header.jsp" flush="false" />
 	<jsp:include page="<%=contentPage%>" flush="false" />
 	<jsp:include page="/include/html/footer.jsp" flush="false" />

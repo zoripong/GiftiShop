@@ -1,40 +1,66 @@
+<%@page import="java.io.FileReader"%>
+<%@page import="java.io.BufferedReader"%>
+<%@page import="java.io.IOException"%>
+<%@page import="java.util.StringTokenizer, java.util.ArrayList"%>
+<%@page import="model.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+
+
 	<%
+		
 		class MenuReader{
 			private String fileName;
-		
+			
 			public MenuReader(String fileName){
 				this.fileName = fileName;
-				System.out.println("log : "+fileName);							
+				readFile();
 			}
 			
-			public String getList(int storeNum, int cultivars){
+			private void readFile(){
 				
+				String filePath = application.getRealPath("./data/products/"+fileName+".txt");
+				
+				BufferedReader br = null;
+				ArrayList<Product> products = new ArrayList<Product>();
+				
+				try{
+					br = new BufferedReader(new FileReader(filePath));
+					while(true){
+						// 한 줄 씩 읽어옴
+						String str = br.readLine();
+						if(str == null) break;
+					
+						// \t을 기준으로 token을 나눔
+						StringTokenizer token = new StringTokenizer(str, "\t");
+						while(token.hasMoreTokens()){
+							//리스트에 상품 객체 추가
+							products.add(new Product(token.nextToken(), token.nextToken(), Integer.parseInt(token.nextToken()), Integer.parseInt(token.nextToken()), token.nextToken()));
+						}
+					}
+					br.close();	
+				}catch(IOException e){
+					System.out.println(e.toString());
+				}
+				
+			}
+			
+			public String createMenuItem(){
 				return null;
 			}
+			
 		}
-	%>
-	<%
-	
-	out.println(request.getParameter("MENU_NAME"));
-
 	
 	MenuReader menuReader = new MenuReader(request.getParameter("MENU_NAME"));
-	menuReader.getList(-1, -1);
-	
-	
 	%>
 	<jsp:include page="/include/html/menu.jsp" flush="false" />
+	
+	<section id="item00">
+		<img class="prd_img" src="data/product_images/product_00.jpg"/>
+		<h5 class="prd_name">[LOTTE] 바삭바삭 크런키</h5>
+		<p class="prd_store">CU</p>
+		<p class="prd_type">식품</p>
+		<p class="prd_price">1000</p>
+	</section>
 
-	<div>
-	</div>
-</body>
-</html>
+	
