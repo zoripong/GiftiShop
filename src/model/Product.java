@@ -7,12 +7,12 @@ public class Product {
 	private int prdPrice;
 	private String prdPath;
 
-	public Product(String prdName, String prdStore, int prdType, int prdPrice, String prdPath) {
+	public Product(String prdName, String prdStore, String prdType, String prdPrice, String prdPath) {
 		super();
 		this.prdName = prdName;
 		this.prdStore = prdStore;
-		this.prdType = prdType;
-		this.prdPrice = prdPrice;
+		this.prdType = Integer.parseInt(prdType);
+		this.prdPrice = Integer.parseInt(prdPrice);
 		this.prdPath = prdPath;
 	}
 

@@ -7,8 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:forward page="indexTemplate.jsp">
-		<jsp:param name="CONTENTPAGE" value="main.jsp?MENU_NAME=menu_00" />
+	<%
+		String MENU_NAME = request.getParameter("MENU_NAME");
+		
+	%>
+	
+	<jsp:forward page="template.jsp">
+		<jsp:param name="CONTENTPAGE" value="indexProc.jsp?MENU_NAME=<%=MENU_NAME%>%>" />
 	</jsp:forward>	
+	
 </body>
 </html>

@@ -1,0 +1,74 @@
+#sc_item {
+	width: 80%;
+	height: 65%;
+	margin-right: 10%;
+	margin-left: 10%;
+}
+
+#sc_item_image {
+	float: left;
+	width: 40%;
+	height: 100%;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+#sc_item_image img {
+	width: 100%;
+	height: auto;
+}
+
+#sc_item_detail {
+	width: 40%;
+	display: inline-block;
+}
+
+.prd_store {
+	text-align: left;
+	font-size: 15px;
+	line-height: 0%;
+}
+
+.prd_name {
+	text-align: left;
+	font-weight: bolder;
+	font-size: 19px;
+}
+
+.prd_price {
+	text-align: right;
+	font-weight: bolder;
+	font-size: 18px;
+	margin-right: 20px;
+}
+
+#sc_item_purchase {
+	width: 40%;
+	display: inline-block;
+}
+
+#form_number {
+	text-align: center;
+	margin: 7px;
+	width: 100%;
+}
+
+#text_number {
+	width: 75%;
+	text-align: center;
+}
+
+.btn_pm {
+	width: 25px;
+	height: 25px;
+}
+
+#text_message {
+	width: 100%;
+	margin: 7px;
+}
+
+#btn_submit {
+	width: 100%;
+	margin: 7px;
+}

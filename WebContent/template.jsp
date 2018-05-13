@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 <%
 	String contentPage = request.getParameter("CONTENTPAGE");
+	System.out.println("CONTENTPAGE : "+contentPage);
 %>
-<link rel="stylesheet" type="text/css" href="include/css/index.css">
+<link rel="stylesheet" type="text/css" href="include/css/template.css">
 <link rel="stylesheet" type="text/css" href="include/css/header.css">
-<link rel="stylesheet" type="text/css" href="include/css/menu.css">
 <link rel="stylesheet" type="text/css" href="include/css/footer.css">
-<link rel="stylesheet" type="text/css" href="include/css/main.css">
 
+
+<link rel="stylesheet" type="text/css" href="include/css/menu.css">
 </head>
 <body>
 	<jsp:include page="/include/html/header.jsp" flush="false" />

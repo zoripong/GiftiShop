@@ -9,10 +9,12 @@ import java.util.StringTokenizer;
 import model.Product;
 
 public class MenuReader {
+	private String menuName;
 	private String filePath;
 	private ArrayList<Product> products;
-	public MenuReader(String filePath){
+	public MenuReader(String menuName, String filePath){
 		System.out.println(filePath);
+		this.menuName = menuName;
 		this.filePath = filePath;
 		products = new ArrayList<Product>();
 		readFile();
@@ -34,7 +36,7 @@ public class MenuReader {
 				StringTokenizer token = new StringTokenizer(str, "\t");
 				while(token.hasMoreTokens()){
 					//리스트에 상품 객체 추가
-					products.add(new Product(token.nextToken(), token.nextToken(), Integer.parseInt(token.nextToken()), Integer.parseInt(token.nextToken()), token.nextToken()));
+					products.add(new Product(token.nextToken(), token.nextToken(),token.nextToken(),token.nextToken(), token.nextToken()));
 				}
 			}
 			br.close();	
@@ -43,11 +45,12 @@ public class MenuReader {
 		}
 		
 	}
-	
+		
 	private String createItem(Product prd){
 		
 		/*
 			//sample code	
+			 <a href="prdDetail.jsp?PRD_NUM=
 			<section id="item_00" class="prd_item">
 				<p class="prd_store">CU</p>
 				<img class="prd_img" src="data/product_images/product_00.jpg" />
@@ -58,15 +61,22 @@ public class MenuReader {
 		*/
 		StringBuffer code = new StringBuffer();
 		
+		code.append("<a href=\"prdDetail.jsp?MENU_NAME="+menuName+"&PRD_STORE="+prd.getPrdStore()+"&PRD_IMAGE="+prd.getPrdPath()+"&PRD_NAME="+prd.getPrdName()+"&PRD_PRICE="+prd.getPrdPrice()+"&PRD_TYPE="+prd.getPrdType()+"\"");
 		code.append("<section id=\""+prd.getPrdPath()+"\" class=\"prd_item\">");
 		code.append("<p class=\"prd_store\">"+prd.getPrdStore()+"</p>");
 		code.append("<img class=\"prd_img\" src=\"data/product_images/"+prd.getPrdPath()+".jpg\" />");
 		code.append("<h5 class=\"prd_name\">"+prd.getPrdName()+"</h5>");
 		code.append("<p class=\"prd_price\">₩ "+prd.getPrdPrice()+"</p>");
-		code.append("<div class=\"prd_type\"></div></section>");
+		code.append("<div class=\"prd_type\"></div></section></a>");
 	
 		return code.toString();
 	}
+	
+	public String createItemDetail(Product prd) {
+
+		return null;
+	}
+
 	
 	public String createItemList(){
 		StringBuffer code = new StringBuffer();
