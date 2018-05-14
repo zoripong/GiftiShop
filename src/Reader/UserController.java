@@ -29,13 +29,14 @@ public class UserController {
 			br = new BufferedReader(new FileReader(filePath));
 			while(true){
 				String str = br.readLine();
-				System.out.println(str);
+				System.out.println("2018-05-14 12:45 :"+str);
 				if(str == null) break;
-				StringTokenizer token = new StringTokenizer(str, "\t");
+				StringTokenizer token = new StringTokenizer(str, "\t", false);
 				while(token.hasMoreTokens()){
 					// 고객 정보 추가
+					
 					users.add(new User(token.nextToken(), token.nextToken()));
-
+					
 				}
 			}
 			br.close();	
@@ -48,7 +49,20 @@ public class UserController {
 	}
 
 	public boolean isExist(User user) {
+
 		return users.contains(user);
+	}
+	
+	
+	public boolean isValidID(User user) {
+		Iterator<User> iterator = users.iterator();
+		
+		while(iterator.hasNext()) {
+			if(iterator.next().getUserId().equals(user.getUserId())) {
+				return true;
+			}
+		}
+		return false;	
 	}
 
 	// user 추가

@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 <%
 	String contentPage = request.getParameter("CONTENTPAGE");
+	String isLoginState = request.getParameter("isLoginState");
+	System.out.println("template.jsp > isLoginState : " + isLoginState);
+	
 	System.out.println("CONTENTPAGE : "+contentPage);
 %>
 <link rel="stylesheet" type="text/css" href="include/css/template.css">
@@ -15,7 +18,7 @@
 <link rel="stylesheet" type="text/css" href="include/css/menu.css">
 </head>
 <body>
-	<jsp:include page="/include/html/header.jsp" flush="false" />
+	<jsp:include page="/include/html/header.jsp?isLoginState=<%=isLoginState%>" flush="false" />
 	<jsp:include page="<%=contentPage%>" flush="false" />
 	<jsp:include page="/include/html/footer.jsp" flush="false" />
 </body>

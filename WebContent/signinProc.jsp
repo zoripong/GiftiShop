@@ -16,35 +16,19 @@
 	User user = new User(request.getParameter("id"), request.getParameter("pw"));
 	UserController userReader = new UserController(application.getRealPath("./data/users.txt"));
 	
-	if(userReader.isExist(user)){%>
-		<jsp:forward page="signin.jsp"/>
+	if(userReader.isValidID(user)){%>
+		<jsp:forward page="signin.jsp?isFirst=false"/>
+		
 	<%		
 	}else{
 		userReader.insert(user);
 		%>
-		<jsp:forward page="login.jsp"/>
+		<jsp:forward page="login.jsp?fromSignIn=true&isFail=false"/>
 		<%
 	}
 	
 %>
 
-<%--
-	
-	<%
-	if(id.equals("choi")){
-		if(pw.equals("1234")){%>
-	<jsp:forward page="loginOK.jsp"></jsp:forward>
-	<%}else{%>
-
-	<jsp:forward page="login.jsp"></jsp:forward>
-	<%}
-	}else{%>
-
-	<jsp:forward page="insert.jsp"></jsp:forward>
-	<% }
-%>
-	
-	 --%>
 
 </body>
 </html>

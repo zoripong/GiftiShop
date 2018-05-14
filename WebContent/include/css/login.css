@@ -23,10 +23,9 @@ body {
 		rgba(0, 0, 0, 0.19);
 }
 
-#login_form h1 {
-	color: #4CAF50; font-size : 20px;
-	font-weight: bolder;
-	font-size: 20px;
+#img_home{
+	width : 180px;	
+	margin : 15px;
 }
 
 #login_form {

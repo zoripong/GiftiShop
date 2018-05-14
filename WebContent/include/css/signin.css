@@ -21,17 +21,15 @@ body {
 	border-radius: 15px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
-#sigin_form h1 {
-	color: #4CAF50; font-size : 20px;
-	font-weight: bolder;
-	font-size: 20px;
+#img_home{
+	width : 180px;	
+	margin:15px;
 }
 
 #sigin_form {
 	margin: auto;
 	position: relative;
-	top: 30%;
+	top: 25%;
 }
 
 .input_text {

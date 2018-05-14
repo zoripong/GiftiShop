@@ -27,17 +27,26 @@ public class User {
 	}
 	
 	public String toString() {
-		return userId+"\t"+userPw+"\n";
+		return userId+"\t"+userPw+"\t";
 	}
 
-	
-	// TODO 아이디만 같아도 같은 객체!!
-//	@Override
-//	public boolean equals(Object arg0) {
-//		// TODO Auto-generated method stub
-//		return super.equals(arg0);
-//	}
-	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User users = (User) o;
+
+        if (!userId.equals(users.userId)) return false;
+        return userPw.equals(users.userPw);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = userId.hashCode();
+        result = 31 * result + userPw.hashCode();
+        return result;
+    }
 	
 	
 	
