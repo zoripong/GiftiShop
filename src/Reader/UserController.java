@@ -29,7 +29,6 @@ public class UserController {
 			br = new BufferedReader(new FileReader(filePath));
 			while(true){
 				String str = br.readLine();
-				System.out.println("2018-05-14 12:45 :"+str);
 				if(str == null) break;
 				StringTokenizer token = new StringTokenizer(str, "\t", false);
 				while(token.hasMoreTokens()){

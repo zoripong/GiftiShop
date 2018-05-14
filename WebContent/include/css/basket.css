@@ -1,0 +1,31 @@
+#basket_title{
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+#item_list {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	min-height: 70%;
+}
+
+.bakset_item {
+	width: 100%;
+}
+
+.item_image{
+	width:120px;
+	height:120px;
+	display:inline;
+}
+
+.bolder_line {
+	
+	border: 1.5px solid black;
+}
+
+.light_line {
+	width:95%;
+	border: 0.5px solid #cccccc;
+}

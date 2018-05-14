@@ -72,12 +72,7 @@ public class MenuReader {
 		return code.toString();
 	}
 	
-	public String createItemDetail(Product prd) {
 
-		return null;
-	}
-
-	
 	public String createItemList(){
 		StringBuffer code = new StringBuffer();
 		int index = 1;
