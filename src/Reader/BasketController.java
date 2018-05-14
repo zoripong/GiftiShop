@@ -139,7 +139,7 @@ public class BasketController {
 			bw = new BufferedWriter(new FileWriter(file.getAbsoluteFile()));
 			// 파일 쓰기
 			for(int i = 0; i<basketProducts.size(); i++) {
-				bw.write((new PurchaseProduct(basketProducts.get(i), true).toString()));
+				bw.write((new PurchaseProduct(basketProducts.get(i), "false").toString()));
 			}
 			bw.flush();
 			bw.close();

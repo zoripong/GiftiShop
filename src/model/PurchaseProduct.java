@@ -4,10 +4,10 @@ public class PurchaseProduct {
 	private BasketProduct prd;
 	private boolean isUsing;
 
-	public PurchaseProduct(BasketProduct prd, boolean isUsing) {
+	public PurchaseProduct(BasketProduct prd, String isUsing) {
 		super();
 		this.prd = prd;
-		this.isUsing = isUsing;
+		this.isUsing = Boolean.parseBoolean(isUsing);
 	}
 
 	public BasketProduct getPrd() {
