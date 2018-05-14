@@ -9,7 +9,6 @@
 <body>
 	<%
 		String MENU_NAME = request.getParameter("MENU_NAME");
-		
 	%>
 	
 	<jsp:forward page="template.jsp">

@@ -12,8 +12,6 @@
 <link rel="stylesheet" type="text/css" href="include/css/template.css">
 <link rel="stylesheet" type="text/css" href="include/css/header.css">
 <link rel="stylesheet" type="text/css" href="include/css/footer.css">
-
-
 <link rel="stylesheet" type="text/css" href="include/css/menu.css">
 </head>
 <body>

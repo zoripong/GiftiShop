@@ -5,14 +5,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="include/css/login.css">
+
 </head>
 <body>
 	<section id="sc_login">
 		<form id="login_form" action="loginProc.jsp" method="POST">
-			<input type="text" name="id" required/>
-			<input type="password" name="pw" required/>
-			<input type="button" value="LogIn" id="btn_login"/>	
-			<a href="signIn.jsp">Join us?</a>
+			<h1>Log In</h1>
+			<input class="input_text" type="text" name="id" required placeholder="ID"/><br/>
+			<input class="input_text" type="password" name="pw" required placeholder="Password"/><br/>
+			<input id="btn_login" type="button" value="Log In" />	<br/>
+			<a href="signin.jsp"><p id="link_signin">Join us?</p></a>
 		</form>
 	</section>
 </body>

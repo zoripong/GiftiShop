@@ -18,6 +18,7 @@
 <link rel="stylesheet" type="text/css" href="include/css/index.css">
 
 <jsp:include page="/include/html/menu.jsp" flush="false" />
+
 <section id="sc_items">
 	<%= menuReader.createItemList() %>
 </section>

@@ -61,13 +61,13 @@ public class MenuReader {
 		*/
 		StringBuffer code = new StringBuffer();
 		
-		code.append("<a href=\"prdDetail.jsp?MENU_NAME="+menuName+"&PRD_STORE="+prd.getPrdStore()+"&PRD_IMAGE="+prd.getPrdPath()+"&PRD_NAME="+prd.getPrdName()+"&PRD_PRICE="+prd.getPrdPrice()+"&PRD_TYPE="+prd.getPrdType()+"\"");
 		code.append("<section id=\""+prd.getPrdPath()+"\" class=\"prd_item\">");
+		code.append("<a href=\"prdDetail.jsp?MENU_NAME="+menuName+"&PRD_STORE="+prd.getPrdStore()+"&PRD_IMAGE="+prd.getPrdPath()+"&PRD_NAME="+prd.getPrdName()+"&PRD_PRICE="+prd.getPrdPrice()+"&PRD_TYPE="+prd.getPrdType()+"\"");
 		code.append("<p class=\"prd_store\">"+prd.getPrdStore()+"</p>");
 		code.append("<img class=\"prd_img\" src=\"data/product_images/"+prd.getPrdPath()+".jpg\" />");
 		code.append("<h5 class=\"prd_name\">"+prd.getPrdName()+"</h5>");
 		code.append("<p class=\"prd_price\">₩ "+prd.getPrdPrice()+"</p>");
-		code.append("<div class=\"prd_type\"></div></section></a>");
+		code.append("<div class=\"prd_type\"></div></a></section>");
 	
 		return code.toString();
 	}

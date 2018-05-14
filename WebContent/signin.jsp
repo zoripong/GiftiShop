@@ -5,15 +5,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="include/css/signin.css">
 <script src="include/script/signin.js"></script>
 </head>
 <body>
 	<section id="sc_signin">
+	
 		<form id="sigin_form" action="signinProc.jsp" method="POST">
-			<input type="text" id="ip_id" name="id" required/>
-			<input type="password" id="ip_pw" name="pw" required/>
-			<input type="password" id="ip_re_pw" required/>
-			<input type="button" id="btn_signin" value="JOIN"/>
+			<h1>Sign In</h1>
+			<input class="input_text" type="text" id="ip_id" name="id" placeholder="ID" required/><br/>
+			<input class="input_text" type="password" id="ip_pw" name="pw" placeholder="Password" required/><br/>
+			<input class="input_text" type="password" id="ip_re_pw" placeholder="Repeat Password" required/><br/>
+			<input type="button" id="btn_signin" value="Join"/>
 		</form>
 	</section>
 </body>
