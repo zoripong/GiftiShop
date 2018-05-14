@@ -57,7 +57,7 @@ public class Product {
 	}
 	
 	public String toString() {
-		return prdName+"\t"+prdStore+"\t"+prdType+"\t"+prdPrice+"\t"+prdPath;
+		return prdName+"\t"+prdStore+"\t"+prdType+"\t"+prdPrice+"\t"+prdPath+"\t";
 	}
 	
 }

@@ -1,17 +1,8 @@
 window.onload = function() {
-	document.getElementById("btn_submit").onclick = checkValid;
 	document.getElementById("btn_minus").onclick = minusNum;
 	document.getElementById("btn_plus").onclick = plusNum;
 }
 
-var checkValid = function() {
-
-	var messageBox = document.getElementById("text_message");
-	if (messageBox.value == "") {
-
-	}
-
-};
 
 var plusNum = function() {
 	if (parseInt(document.getElementById("text_number").value) >= 100) {

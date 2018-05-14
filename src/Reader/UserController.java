@@ -75,8 +75,7 @@ public class UserController {
 			BufferedWriter out = new BufferedWriter(new FileWriter(filePath, true));
 			out.write(user.toString());
 			out.close();
-			System.out.println("뀨?");
-
+			
 		}catch(IOException e) {
 			e.printStackTrace();
 			System.out.println(e.toString());

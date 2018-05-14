@@ -38,7 +38,7 @@ public class BasketProduct {
 	
 	@Override
 	public String toString() {
-		return prd.toString()+"\t"+number+"\t"+message;
+		return prd.toString()+number+"\t"+message+"\t";
 	}
 
 }

@@ -17,11 +17,12 @@
 		if (fromSignin) {
 			out.println("<script>alert('회원가입이 완료되었습니다 :)');</script>");
 		}
-		
 		if(isFail){
 			out.println("<script>alert('존재하지 않는 계정입니다. :(');</script>");
 		}
-		
+		if(request.getParameter("isNotLogin")!=null)
+			out.println("<script>alert('로그인이 필요합니다.');</script>");
+
 	%>
 	<section id="sc_login">
 	<form id="login_form" action="loginProc.jsp" method="POST">

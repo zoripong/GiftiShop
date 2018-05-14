@@ -1,5 +1,9 @@
+<%@page import="model.User"%>
 <%
-	boolean isLoginState = Boolean.parseBoolean(request.getParameter("isLoginState"));
+	boolean isLoginState= false;
+	User user = (User)session.getAttribute("user_id");
+	if(user != null)
+		isLoginState = true;
 %>
 
 <header id="top_title">

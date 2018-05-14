@@ -7,7 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%
+		System.out.println("isZero?"+request.getParameter("isZero"));
+		if(request.getParameter("isZero")!=null){
+						
+			out.println("<script>alert('장바구니가 비어있습니다.');</script>");
+		}
+	%>
 	<jsp:forward page="template.jsp">
 		<jsp:param name="CONTENTPAGE" value="basketProc.jsp" />
 	</jsp:forward>	

@@ -22,6 +22,11 @@
 	<%		
 	}else{
 		userReader.insert(user);
+		
+		BasketController basketController = new BasketController(application.getRealPath("./data/basket/"+user.getUserId()+".txt"));
+		
+		
+		
 		%>
 		<jsp:forward page="login.jsp?fromSignIn=true&isFail=false"/>
 		<%

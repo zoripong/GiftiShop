@@ -19,11 +19,12 @@
 			//로그인 후
 			isLoginState = true;
 		}
+		if(request.getParameter("isFail")!=null)
+			out.println("<script>alert('구매에 실패하였습니다. 다시 시도하세요.');</script>");
 		String MENU_NAME = request.getParameter("MENU_NAME");
-	%>
+	%>	
 	
 	<jsp:forward page="template.jsp">
-		<jsp:param name="isLoginState" value="<%=isLoginState%>"/>
 		<jsp:param name="CONTENTPAGE" value="indexProc.jsp?MENU_NAME=<%=MENU_NAME%>" />
 	</jsp:forward>	
 	

@@ -20,6 +20,18 @@
 	 		sb.append(key+"="+params.get(key)[0]+"&");
 	 	}
 	 	
+	 	if(request.getParameter("isNotLogin")!=null){
+	 		
+	 		%>
+	 		<jsp:forward page="login.jsp?isNotLogin=1"/>
+	 		<%
+	 	}
+	 	
+		if(request.getParameter("isFail")!=null){
+			out.println("<script>alert('실패하였습니다. 다시 시도하세요.');</script>");
+	 	}	
+	 	
+	 	
 	 %>
 	
 

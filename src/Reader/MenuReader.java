@@ -74,6 +74,7 @@ public class MenuReader {
 	
 
 	public String createItemList(){
+		
 		StringBuffer code = new StringBuffer();
 		int index = 1;
 		for(Product prd : products){
@@ -82,6 +83,7 @@ public class MenuReader {
 				code.append("<br/>");
 			index++;
 		}
+		
 		return code.toString();
 	}
 }
