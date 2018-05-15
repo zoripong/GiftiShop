@@ -12,6 +12,12 @@
 	
 			<%
 				if(isLoginState){
+					if(user.getUserId().equals("admin") && user.getUserPw().equals("admin")){
+						%>
+						<a href="purchaseList.jsp"><img id="ic_user_profile" src="include/images/ic_plus.svg"/></a>
+
+						<%
+					}else{
 			%>
 			<a href="basket.jsp">
 			<!-- 장바구니 -->
@@ -23,7 +29,7 @@
 			<img id="ic_user_profile" src="include/images/ic_user_profile.svg"/>
 			</a>
 	
-			<%}else{ %>
+			<%}}else{ %>
 			<a href="login.jsp?fromSignIn=false&isFail=false">
 			<img id="ic_user_profile" src="include/images/ic_user_add.svg"/>
 			</a>

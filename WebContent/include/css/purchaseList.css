@@ -1,0 +1,71 @@
+#purchase_list{
+	width:80%;
+	height:70%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#purchase_list h1{
+	width:100%;
+	text-align:center;
+}
+#item_list{
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5%;
+	margin-bottom:5%;
+}
+
+
+#item{
+	width:20%;
+	margin:1%;
+	padding:1%;
+	border : 1px solid #acacac;
+	text-align : center;
+	display:inline-block;
+	
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+#item:hover{
+	background-color:rgba(76, 175, 80, 0.7);
+}
+
+.item_store{
+	text-align:left;
+}
+.item_image{
+	width:90%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.item_price{
+	width:100%;
+	font-weight:bolder;
+	text-align:right;
+}
+.item_num{
+	text-align:right;
+	
+}
+.item_message{
+	text-align:center;
+	color : #333333;
+}
+
+#coupon_size{
+	width:90%;
+	text-align:right;
+	margin-left:auto;
+	margin-right:auto;
+}
+.using{
+	 background-color : #ffffff;
+}
+
+.notUsing{
+		background-color:rgba(172,172,172, 0.5);
+}

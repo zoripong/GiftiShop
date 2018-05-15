@@ -16,10 +16,15 @@ import model.PurchaseProduct;
 public class PurchaseListController {
 	private String filePath;
 	private ArrayList<PurchaseProduct> purchaseProducts;
+
+	private ArrayList<PurchaseProduct> usingPurchaseProducts;
+	private ArrayList<PurchaseProduct> notUsingPurchaseProducts;
 	
 	public PurchaseListController(String filePath) {
 		this.filePath = filePath;
 		purchaseProducts = new ArrayList<PurchaseProduct>();
+		usingPurchaseProducts = new ArrayList<PurchaseProduct>();
+		notUsingPurchaseProducts = new ArrayList<PurchaseProduct>();
 		readFile();
 	}
 	private void readFile() {
@@ -43,8 +48,18 @@ public class PurchaseListController {
 					Product prd = new Product(token.nextToken(), token.nextToken(), token.nextToken(),
 							token.nextToken(), token.nextToken());
 					BasketProduct bprd = new BasketProduct(prd, token.nextToken(), token.nextToken());
-					purchaseProducts.add(new PurchaseProduct(bprd, token.nextToken()));
+					
+					PurchaseProduct ppd = new PurchaseProduct(bprd, token.nextToken());
+					purchaseProducts.add(ppd);
 
+					if(ppd.isUsing()){
+						usingPurchaseProducts.add(ppd);
+					}
+					else {
+						notUsingPurchaseProducts.add(ppd);
+					}
+					
+					
 				}
 			}
 
@@ -56,12 +71,54 @@ public class PurchaseListController {
 	
 	private String createItem(PurchaseProduct prd) {
 		
-		return null;
+		/*
+		<section id="item" class="using">
+			<p class="item_store"> 매장</p>
+			<img class="item_image" src="data/product_images/product_07.jpg"/>
+			<p class="item_price">₩29900</p>
+			<p class="item_num">X1</p>
+			<p class="item_message">고맙다 이자식아</p>
+		</section>
+		 */
+		
+		StringBuffer sb = new StringBuffer();
+		String isUsing;
+		if(!prd.isUsing()) {
+			isUsing="using";
+		}else {
+			isUsing="notUsing";			
+		}
+		
+		sb.append("<section id=\"item\" class=\""+isUsing+"\">");
+		sb.append("<p class=\"item_store\">"+prd.getPrd().getPrd().getPrdStore()+"</p>");
+		sb.append("<img class=\"item_image\" src=\"data/product_images/"+prd.getPrd().getPrd().getPrdPath()+".jpg\"/>");
+		sb.append("<p class=\"item_price\">₩"+prd.getPrd().getPrd().getPrdPrice()+"</p>");
+		sb.append("<p class=\"item_num\">X"+prd.getPrd().getNumber()+"</p>");
+		sb.append("<p class=\"item_message\">"+prd.getPrd().getMessage()+"</p>");
+		sb.append("</section>");	
+		
+		return sb.toString();
 	}
 	
-	public String createItemList(boolean isUsing) {
+	public String createItemList() {
+		StringBuffer sb = new StringBuffer();
 		
-		return null;
+		int index = 0;
+		for(int i = 0; i<notUsingPurchaseProducts.size(); i++) {
+			index++;
+			sb.append(createItem(notUsingPurchaseProducts.get(i)));
+			if(index%4==0)
+				sb.append("<br/>");
+		}
+		
+		for(int i = 0; i<usingPurchaseProducts.size(); i++) {
+			index++;
+			sb.append(createItem(usingPurchaseProducts.get(i)));
+			if(index%4==0)
+				sb.append("<br/>");
+		}
+	
+		return sb.toString();
 	}
 	
 	public void useCoupon(PurchaseProduct prd) {
@@ -92,5 +149,13 @@ public class PurchaseListController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public int usableCouponSize() {
+		return notUsingPurchaseProducts.size();
+	}
+	
+	public int totalSize() {
+		return purchaseProducts.size();
 	}
 }

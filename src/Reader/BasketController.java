@@ -136,7 +136,7 @@ public class BasketController {
 			if (!file.exists()) {
 				file.createNewFile();
 			}
-			bw = new BufferedWriter(new FileWriter(file.getAbsoluteFile()));
+			bw = new BufferedWriter(new FileWriter(file.getAbsoluteFile(), true));
 			// 파일 쓰기
 			for(int i = 0; i<basketProducts.size(); i++) {
 				bw.write((new PurchaseProduct(basketProducts.get(i), "false").toString()));
